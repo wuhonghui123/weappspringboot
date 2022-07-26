@@ -24,5 +24,7 @@ public interface SysUserService {
 
     SysUser findByName(String username);
 
+
+
     List<SysUserRole> findUserRoles(Long userId);
 }

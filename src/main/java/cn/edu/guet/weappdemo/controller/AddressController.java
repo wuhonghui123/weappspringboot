@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 public class AddressController {
     @PostMapping("/address/add")//添加地址信息
     public HttpResult add_Address(){
+
         return HttpResult.ok();
     }
 
