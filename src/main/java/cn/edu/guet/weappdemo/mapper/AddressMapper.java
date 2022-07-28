@@ -1,6 +1,9 @@
 package cn.edu.guet.weappdemo.mapper;
 
+import cn.edu.guet.weappdemo.bean.Address;
 import org.apache.ibatis.annotations.Mapper;
+
+import java.util.List;
 
 /**
  * @Author: wuhonghui
@@ -8,4 +11,6 @@ import org.apache.ibatis.annotations.Mapper;
  */
 @Mapper
 public interface AddressMapper {
+    List<Address> getAddress();
+    int updateAddress(Address address);
 }

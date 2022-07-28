@@ -9,7 +9,16 @@ public class Address {
     private String name;
     private String phone;
     private String address;
-    private String userId;
+
+    public String getUser_id() {
+        return user_id;
+    }
+
+    public void setUser_id(String user_id) {
+        this.user_id = user_id;
+    }
+
+    private String user_id;
 
     public String getId() {
         return id;
@@ -43,13 +52,7 @@ public class Address {
         this.address = address;
     }
 
-    public String getUserId() {
-        return userId;
-    }
 
-    public void setUserId(String userId) {
-        this.userId = userId;
-    }
 
 
 }
