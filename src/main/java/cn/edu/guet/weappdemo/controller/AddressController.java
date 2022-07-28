@@ -30,7 +30,12 @@ public class AddressController {
     }
 
     @PostMapping("/address/delete")//删除地址信息
-    public HttpResult delete_Address(){
-        return HttpResult.ok();
+    public HttpResult delete_Address(@RequestBody Address address){
+        return HttpResult.ok(addressService.deleteAddress(address.getId()));
+    }
+    @PostMapping("/address/add")//增加地址信息
+    public HttpResult addAddress(@RequestBody Address address){
+
+        return HttpResult.ok(addressService.addAddress(address));
     }
 }
