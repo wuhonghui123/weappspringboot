@@ -9,6 +9,18 @@ public class ShoppingCart {
     private String food_id;
     private String food_name;
     private int food_num;
+
+    @Override
+    public String toString() {
+        return "ShoppingCart{" +
+                "user_id='" + user_id + '\'' +
+                ", food_id='" + food_id + '\'' +
+                ", food_name='" + food_name + '\'' +
+                ", food_num=" + food_num +
+                ", food_price=" + food_price +
+                '}';
+    }
+
     private double food_price;
     public String getUser_id() {
         return user_id;
