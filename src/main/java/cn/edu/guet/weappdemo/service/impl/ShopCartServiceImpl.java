@@ -5,17 +5,17 @@ import cn.edu.guet.weappdemo.http.HttpResult;
 import cn.edu.guet.weappdemo.mapper.ShopCartMapper;
 import cn.edu.guet.weappdemo.service.ShopCartService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+@Service
 public class ShopCartServiceImpl implements ShopCartService {
 
     @Autowired
     private ShopCartMapper shopCartMapper;
-    @Autowired
-    private HttpResult httpResult;
 
     @Override
     public HttpResult getshopcartList(String user_id) {
-        httpResult=shopCartMapper.getshopcartList(user_id);
+     HttpResult   httpResult=shopCartMapper.getshopcartList(user_id);
         return httpResult;
     }
 
