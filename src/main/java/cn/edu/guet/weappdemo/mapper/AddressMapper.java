@@ -2,6 +2,7 @@ package cn.edu.guet.weappdemo.mapper;
 
 import cn.edu.guet.weappdemo.bean.Address;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -13,4 +14,6 @@ import java.util.List;
 public interface AddressMapper {
     List<Address> getAddress();
     int updateAddress(Address address);
+    int deleteAddress(String id);
+    int addAddress(Address address);
 }
