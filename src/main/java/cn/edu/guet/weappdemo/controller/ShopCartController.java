@@ -23,8 +23,9 @@ public class ShopCartController {
     private ShopCartService shopCartService;
 
     @GetMapping("shopcart/list")//用户登录获取用户的购物车
-    public HttpResult getshopcartList(@RequestBody ShoppingCart shoppingCart){
-        String user_id=shoppingCart.getUser_id();
+//    public HttpResult getshopcartList(@RequestBody ShoppingCart shoppingCart){
+    public HttpResult getshopcartList(String user_id){
+//        String user_id=shoppingCart.getUser_id();
         System.out.println(user_id);
      List<ShoppingCart> Result=shopCartService.getshopcartList(user_id);
         System.out.println("控制器"+Result);

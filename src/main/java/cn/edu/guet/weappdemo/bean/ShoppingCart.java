@@ -9,6 +9,17 @@ public class ShoppingCart {
     private String food_id;
     private String food_name;
     private int food_num;
+    private String foo_url;
+
+    public void setFoo_url(String foo_url) {
+        this.foo_url = foo_url;
+    }
+
+    public String getFoo_url() {
+        return foo_url;
+    }
+
+
 
     @Override
     public String toString() {
@@ -17,6 +28,7 @@ public class ShoppingCart {
                 ", food_id='" + food_id + '\'' +
                 ", food_name='" + food_name + '\'' +
                 ", food_num=" + food_num +
+                ", foo_url='" + foo_url + '\'' +
                 ", food_price=" + food_price +
                 '}';
     }
