@@ -6,7 +6,25 @@ package cn.edu.guet.weappdemo.bean;
  */
 public class Classification {
     private String id;
-    private String name;
+
+    public String getClass_name() {
+        return class_name;
+    }
+
+    public void setClass_name(String class_name) {
+        this.class_name = class_name;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    private String title;
+    private String class_name;
     private String icon;
     public String getId() {
         return id;
@@ -16,13 +34,7 @@ public class Classification {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
-    }
 
-    public void setName(String name) {
-        this.name = name;
-    }
 
     public String getIcon() {
         return icon;
