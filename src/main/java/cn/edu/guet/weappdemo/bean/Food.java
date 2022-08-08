@@ -23,6 +23,25 @@ public class Food {
     private String desc;
     private String food_class;
 
+    public String getClass_name() {
+        return class_name;
+    }
+
+    public void setClass_name(String class_name) {
+        this.class_name = class_name;
+    }
+
+    private String class_name;
+    public String getFood_class_id() {
+        return food_class_id;
+    }
+
+    public void setFood_class_id(String food_class_id) {
+        this.food_class_id = food_class_id;
+    }
+
+    private String food_class_id;
+
     @Override
     public String toString() {
         return "Food{" +

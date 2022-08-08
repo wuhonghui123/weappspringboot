@@ -7,6 +7,9 @@ import cn.edu.guet.weappdemo.security.JwtAuthenticationToken;
 import cn.edu.guet.weappdemo.service.SysUserService;
 import cn.edu.guet.weappdemo.util.PasswordUtils;
 import cn.edu.guet.weappdemo.util.SecurityUtils;
+import com.alibaba.fastjson.JSONObject;
+import com.fasterxml.jackson.databind.util.JSONPObject;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -23,6 +26,13 @@ public class LoginController {
 
     @Autowired
     private SysUserService sysUserService;
+
+    @PostMapping("setuserinfo")
+    public HttpResult userinfo(@Param("code") String code) {
+        String result = "";
+        String url = "";
+        return HttpResult.ok();
+    }
 
     @PostMapping("login")
 //    public HttpResult login(String username, String password, HttpServletRequest request) {
