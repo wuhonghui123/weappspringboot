@@ -9,6 +9,9 @@ public class ShoppingCart {
     private String food_id;
     private String food_name;
     private int food_num;
+    private String foo_url;
+    private double food_price;
+    private String check;
 
     @Override
     public String toString() {
@@ -17,11 +20,27 @@ public class ShoppingCart {
                 ", food_id='" + food_id + '\'' +
                 ", food_name='" + food_name + '\'' +
                 ", food_num=" + food_num +
+                ", foo_url='" + foo_url + '\'' +
                 ", food_price=" + food_price +
+                ", check='" + check + '\'' +
                 '}';
     }
 
-    private double food_price;
+    public String getCheck() {
+        return check;
+    }
+
+    public void setCheck(String check) {
+        this.check = check;
+    }
+
+    public void setFoo_url(String foo_url) {
+        this.foo_url = foo_url;
+    }
+
+    public String getFoo_url() {
+        return foo_url;
+    }
     public String getUser_id() {
         return user_id;
     }

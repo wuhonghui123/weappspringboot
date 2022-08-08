@@ -13,7 +13,7 @@ import java.util.List;
 @Mapper
 public interface ShopCartMapper {
     List<ShoppingCart> getshopcartList(String user_id);
-    int deleteshopcart(String user_id);
+    int deleteshopcart(String user_id,String food_id);
     int addshopcart(ShoppingCart shoppingCart);
 
 }

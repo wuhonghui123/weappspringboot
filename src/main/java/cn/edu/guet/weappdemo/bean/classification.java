@@ -5,6 +5,7 @@ package cn.edu.guet.weappdemo.bean;
  * @Date: 2022/07/24/23:38
  */
 public class Classification {
+
     private String id;
 
     public String getClass_name() {
@@ -43,6 +44,4 @@ public class Classification {
     public void setIcon(String icon) {
         this.icon = icon;
     }
-
-
 }
