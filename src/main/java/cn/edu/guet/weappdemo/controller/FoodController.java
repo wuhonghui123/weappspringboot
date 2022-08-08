@@ -1,6 +1,6 @@
 package cn.edu.guet.weappdemo.controller;
 
-import cn.edu.guet.weappdemo.bean.Classification;
+
 import cn.edu.guet.weappdemo.http.HttpResult;
 import cn.edu.guet.weappdemo.service.ClassService;
 import cn.edu.guet.weappdemo.service.FoodService;

@@ -22,8 +22,8 @@ public class ShopCartServiceImpl implements ShopCartService {
     }
 
     @Override
-    public int deleteshopcart(String user_id) {
-        int Result=shopCartMapper.deleteshopcart(user_id);
+    public int deleteshopcart(String user_id,String food_id) {
+        int Result=shopCartMapper.deleteshopcart(user_id,food_id);
         return Result;
     }
 

@@ -10,6 +10,6 @@ import java.util.List;
 public interface ShopCartService {
 
     List<ShoppingCart> getshopcartList(String user_id);
-    int deleteshopcart(String user_id);
+    int deleteshopcart(String user_id,String food_id);
    int addshopcart(ShoppingCart shoppingCart);
 }
