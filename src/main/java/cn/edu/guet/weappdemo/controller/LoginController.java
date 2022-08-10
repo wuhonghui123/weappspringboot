@@ -1,6 +1,6 @@
 package cn.edu.guet.weappdemo.controller;
 
-import cn.edu.guet.weappdemo.bean.LoginBean;
+import cn.edu.guet.weappdemo.bean.WeChatModel;
 import cn.edu.guet.weappdemo.bean.SysUser;
 import cn.edu.guet.weappdemo.http.HttpResult;
 import cn.edu.guet.weappdemo.security.JwtAuthenticationToken;
@@ -11,9 +11,7 @@ import com.alibaba.fastjson.JSONObject;
 import com.fasterxml.jackson.databind.util.JSONPObject;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.authentication.AuthenticationManager;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
@@ -36,7 +34,7 @@ public class LoginController {
 
     @PostMapping("login")
 //    public HttpResult login(String username, String password, HttpServletRequest request) {
-    public HttpResult login(@RequestBody LoginBean loginBean, HttpServletRequest request) {
+    public HttpResult login(@RequestBody WeChatModel loginBean, HttpServletRequest request) {
         String username = loginBean.getUsername();
         String password = loginBean.getPassword();
         System.out.println(username);
