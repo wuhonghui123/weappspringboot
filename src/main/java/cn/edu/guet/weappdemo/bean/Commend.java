@@ -7,8 +7,26 @@ import java.sql.Timestamp;
  * @Date: 2022/07/26/0:56
  */
 public class Commend {
+    public String getFood_name() {
+        return food_name;
+    }
+
+    public void setFood_name(String food_name) {
+        this.food_name = food_name;
+    }
+
+    private String food_name;
     private String commend_id;
-    private String food_id;
+
+    public String getOrder_id() {
+        return order_id;
+    }
+
+    public void setOrder_id(String order_id) {
+        this.order_id = order_id;
+    }
+
+    private String order_id;
     private String user_id;
     private String stars;
     private String comments;//用户评论
@@ -22,14 +40,6 @@ public class Commend {
 
     public void setCommend_id(String commend_id) {
         this.commend_id = commend_id;
-    }
-
-    public String getFood_id() {
-        return food_id;
-    }
-
-    public void setFood_id(String food_id) {
-        this.food_id = food_id;
     }
 
     public String getUser_id() {
