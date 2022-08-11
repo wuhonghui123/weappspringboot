@@ -7,6 +7,9 @@ package cn.edu.guet.weappdemo.bean;
 public class Classification {
 
     private String id;
+    private String title;
+    private String class_name;
+    private String icon;
 
     public String getClass_name() {
         return class_name;
@@ -24,9 +27,6 @@ public class Classification {
         this.title = title;
     }
 
-    private String title;
-    private String class_name;
-    private String icon;
     public String getId() {
         return id;
     }
@@ -34,8 +34,6 @@ public class Classification {
     public void setId(String id) {
         this.id = id;
     }
-
-
 
     public String getIcon() {
         return icon;

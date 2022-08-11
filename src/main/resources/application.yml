@@ -9,8 +9,12 @@ spring:
 
 
 server:
-  port: 8099
+  port: 8095
 
 mybatis:
   mapper-locations: classpath:mapper/*Mapper.xml
   type-aliases-package: cn.edu.guet.weappdemo.bean
+
+wechat:
+  appId: wx1ec7f93c422b317b
+  secret: 9bbe8d696f08b6978aecf2ee617a6d26
