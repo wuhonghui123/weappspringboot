@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @Date: 2022/07/26/9:36
  */
 //商家追加评论
+@RestController
 public class CommendController {
 
     @Autowired
