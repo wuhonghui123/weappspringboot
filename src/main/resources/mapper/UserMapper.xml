@@ -1,6 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="cn.edu.guet.weappdemo.mapper.UserMapper">
+    <insert id="insertSelective" parameterType="cn.edu.guet.weappdemo.bean.WeChatModel">
+        insert into user
+        <if test="id != null">
+            id
+        </if>
+        <if test="avatarUrl != null">
+            avatarUrl
+        </if>
+        <if test="nickName != null">
+            nickName
+        </if>
+        <if test="openid != null">
+            openid
+        </if>
+    </insert>
 
     <select id="findUserByNameAndPassword" resultType="cn.edu.guet.weappdemo.bean.WeChatModel">
         select * from user where id = #{openid}

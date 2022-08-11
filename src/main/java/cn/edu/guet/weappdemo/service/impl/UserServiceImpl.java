@@ -24,6 +24,11 @@ public class UserServiceImpl implements UserService {
     public WeChatModel findUserDetail(String openid) {
         return userMapper.findUserDetail(openid);
     }
+
+    @Override
+    public int register(WeChatModel weChatModel) {
+        return userMapper.insertSelective(weChatModel);
+    }
 }
 
 

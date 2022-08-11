@@ -20,18 +20,19 @@ import java.net.URLConnection;
 @CrossOrigin
 @Slf4j
 public class WeChatController {
-    @Value("${wechat.appid}")
+
     String appid = "wx61883fc99e59741e";
-    @Value("${wechat.secret}")
-    String secret = " eb2d595b97779223c9dce58861a6638f";
+
+    String secret = "eb2d595b97779223c9dce58861a6638f";
 
     UserService userService;
+
 
     @GetMapping("/users/wxlogin")
     public String wxLogin(@RequestParam("code") String code){
         log.info("\n\n>>>>> 微信code ={}\n\n",code);
 
-        String url = "https://api.weixin.qq.com/sns/jscode2session?appid=appid&secret=secret&js_code=%s&grant_type=authorization_code";
+        String url = "https://api.weixin.qq.com/sns/jscode2session?appid="+appid+"&secret="+secret+"&js_code="+code+"&grant_type=authorization_code";
         url = String.format(url, appid, secret, code);
 
         StringBuffer resultBuffer = null;
@@ -114,39 +115,6 @@ public class WeChatController {
         return user;
     }
 
-    //修改用户的个人信息
 
-    @PutMapping("/updateUserDetail")
-    public String updateUserDetail(@RequestBody WeChatModel weChatModel){
-        int i;
-        log.info("更新用户信息：{}",weChatModel);
-        try {
-            i = this.userService.updateUserDetail(weChatModel);
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
-        if (i==1) {
-            return "修改成功";
-        }else{
-            return "修改失败";
-        }
-    }
-
-    //用户重置密码
-    @PutMapping("/updataUserPassword")
-    public String updateUserPassword(@RequestBody WeChatModel weChatModel){
-        int i;
-        log.info("重置用户密码：{}",weChatModel);
-        try {
-            i = this.userService.updateByPrimaryKeySelective(weChatModel);
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
-        if (i==1){
-            return "修改成功";
-        }else{
-            return "修改失败";
-        }
-    }
 
 }

@@ -12,5 +12,6 @@ public interface UserService {
     WeChatModel findUserDetail(String openid);
 
 
-
+    int register(WeChatModel weChatModel);
 }
+

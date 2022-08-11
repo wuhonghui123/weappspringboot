@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class AddressController {
     @Autowired
     private AddressService addressService;
-    @PostMapping("/address/get")//添加地址信息
+    @PostMapping("/address/get")//获取地址信息
     public HttpResult get_Address(){
 
         return HttpResult.ok(addressService.getAddress());
