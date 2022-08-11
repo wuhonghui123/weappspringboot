@@ -5,7 +5,20 @@
     <update id="updateCommend"></update>
     <delete id="deleteCommend"></delete>
     <select id="getCommend" resultType="cn.edu.guet.weappdemo.bean.Commend">
-        SELECT commend.*,order_food.food_name FROM order_food,commend
+        SELECT commend.*, order_food.food_name
+        FROM order_food,
+             commend
         WHERE commend.order_id = order_food.order_id
+    </select>
+    <select id="getOrderCommend" resultType="cn.edu.guet.weappdemo.bean.Commend">
+        SELECT *
+        FROM commend
+    </select>
+    <select id="getUserCommend" resultType="cn.edu.guet.weappdemo.bean.Commend">
+        SELECT commend.*
+        FROM commend,
+             user
+        WHERE commend.user_id = user.id
+          AND user.openid = #{value}
     </select>
 </mapper>

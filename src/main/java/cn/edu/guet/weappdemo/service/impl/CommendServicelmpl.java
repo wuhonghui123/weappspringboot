@@ -18,6 +18,16 @@ public class CommendServicelmpl implements CommendService {
     }
 
     @Override
+    public List<Commend> getOrderCommend() {
+        return commendMapper.getOrderCommend();
+    }
+
+    @Override
+    public List<Commend> getUserCommend(String openid) {
+        return commendMapper.getUserCommend(openid);
+    }
+
+    @Override
     public int addCommend(Commend commend) {
         return commendMapper.addCommend(commend);
     }

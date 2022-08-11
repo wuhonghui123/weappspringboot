@@ -12,6 +12,8 @@ import java.util.List;
 @Mapper
 public interface CommendMapper {
     List<Commend> getCommend();
+    List<Commend> getOrderCommend();
+    List<Commend> getUserCommend(String openid);
     int updateCommend(Commend commend);
     int deleteCommend(String id);
     int addCommend(Commend commend);
