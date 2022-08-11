@@ -11,6 +11,7 @@
     <groupId>cn.edu.guet</groupId>
     <artifactId>weappdemo</artifactId>
     <version>0.0.1-SNAPSHOT</version>
+    <packaging>jar</packaging>
     <name>weappSpringboot</name>
     <description>weappSpringboot</description>
     <properties>
@@ -77,6 +78,7 @@
     </dependencies>
 
     <build>
+        <finalName>weappspringboot</finalName>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
