@@ -8,6 +8,8 @@ import cn.edu.guet.weappdemo.service.OrderFoodService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class OrderFoodServiceImpl implements OrderFoodService {
     @Autowired
@@ -15,5 +17,10 @@ public class OrderFoodServiceImpl implements OrderFoodService {
     @Override
     public int AddOrderFoodList(OrderFood orderFood) {
        return orderFoodMapper.AddOrderFoodList(orderFood);
+    }
+
+    @Override
+    public List<OrderFood> getOrderFood(String order_id) {
+        return orderFoodMapper.getOrderFood(order_id);
     }
 }

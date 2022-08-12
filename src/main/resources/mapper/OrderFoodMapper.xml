@@ -4,4 +4,7 @@
     <insert id="AddOrderFoodList" parameterType="cn.edu.guet.weappdemo.bean.OrderFood">
         insert into order_food values(#{order_id},#{food_id},#{food_name},#{food_num},#{food_price})
     </insert>
+    <select id="getOrderFood" resultType="cn.edu.guet.weappdemo.bean.OrderFood">
+        select * from order_food where order_id=#{order_id}
+    </select>
 </mapper>

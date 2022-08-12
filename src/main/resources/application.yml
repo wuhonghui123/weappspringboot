@@ -5,10 +5,13 @@ spring:
 
     username: root
     password: 123456
-
+#时间戳统一转换
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+  time-zone: GMT+8
 
 server:
-  port: 8095
+  port: 8091
 
 mybatis:
   mapper-locations: classpath:mapper/*Mapper.xml
