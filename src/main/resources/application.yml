@@ -7,7 +7,6 @@ spring:
     password: 123456
 
 
-
 server:
   port: 8095
 
