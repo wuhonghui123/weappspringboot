@@ -2,6 +2,7 @@ package cn.edu.guet.weappdemo.controller;
 
 
 import cn.edu.guet.weappdemo.bean.WeChatModel;
+import cn.edu.guet.weappdemo.http.HttpResult;
 import cn.edu.guet.weappdemo.service.UserService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,22 +25,22 @@ public class WeChatController {
     String appid = "wx08c35624c8d66f8f";
 
     String secret = "5af656eca6285b99581958e88e91a7a0";
-
+    @Autowired
     UserService userService;
 
 
     @GetMapping("/users/wxlogin")
-    public String wxLogin(@RequestParam("code") String code){
-        log.info("\n\n>>>>> 微信code ={}\n\n",code);
+    public String wxLogin(@RequestParam("code") String code) {
+        log.info("\n\n>>>>> 微信code ={}\n\n", code);
 
-        String url = "https://api.weixin.qq.com/sns/jscode2session?appid="+appid+"&secret="+secret+"&js_code="+code+"&grant_type=authorization_code";
+        String url = "https://api.weixin.qq.com/sns/jscode2session?appid=" + appid + "&secret=" + secret + "&js_code=" + code + "&grant_type=authorization_code";
         url = String.format(url, appid, secret, code);
 
         StringBuffer resultBuffer = null;
         try {
             URL localURL = new URL(url);
             URLConnection connection = localURL.openConnection();
-            HttpURLConnection httpURLConnection = (HttpURLConnection)connection;
+            HttpURLConnection httpURLConnection = (HttpURLConnection) connection;
 
             httpURLConnection.setRequestProperty("Accept-Charset", "utf-8");
             httpURLConnection.setRequestProperty("Content-Type", "application/json");
@@ -84,21 +85,21 @@ public class WeChatController {
 
     //登录
     @GetMapping("/users")
-    public WeChatModel login(WeChatModel weChatModel){
-        log.info("登录用户：{}",weChatModel);
+    public WeChatModel login(WeChatModel weChatModel) {
+        log.info("登录用户：{}", weChatModel);
         WeChatModel user = this.userService.findUserByNameAndPassword(weChatModel);
-        if (user == null){
+        if (user == null) {
             System.out.println("出错");
         }
         return user;
     }
 
     //注册
-    @PostMapping("/users")
-    public String register(@RequestBody WeChatModel weChatModel){
-        log.info("注册用户：{}",weChatModel);
+    @PostMapping("/users/register")
+    public String register(@RequestBody WeChatModel weChatModel) {
+        log.info("注册用户：{}", weChatModel);
         try {
-            int i = this.userService.register(weChatModel);
+            int i = userService.register(weChatModel);
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
@@ -106,15 +107,8 @@ public class WeChatController {
     }
 
     //根据用户的itemcode查询用户的信息
-    @GetMapping("/getUserDetail")
-    public WeChatModel getUserDetail(String openid){
-        WeChatModel user = this.userService.findUserDetail(openid);
-        if (user == null){
-            System.out.println("出错");
-        }
-        return user;
+    @GetMapping("/getUserInfo")
+    public HttpResult getUserDetail(String openid) {
+        return HttpResult.ok(userService.getUserInfo(openid));
     }
-
-
-
 }

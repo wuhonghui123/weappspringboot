@@ -8,22 +8,24 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.security.PrivateKey;
+import java.util.List;
 
 
 @Service("userService")
 public class UserServiceImpl implements UserService {
-
+    @Autowired
     UserMapper userMapper;
+
     @Override
     public WeChatModel findUserByNameAndPassword(WeChatModel weChatModel) {
         return userMapper.findUserByNameAndPassword(weChatModel);
     }
 
-
     @Override
-    public WeChatModel findUserDetail(String openid) {
-        return userMapper.findUserDetail(openid);
+    public List<WeChatModel> getUserInfo(String openid) {
+        return userMapper.getUserInfo(openid);
     }
+
 
     @Override
     public int register(WeChatModel weChatModel) {

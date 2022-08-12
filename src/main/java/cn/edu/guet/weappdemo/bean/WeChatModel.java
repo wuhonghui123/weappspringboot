@@ -1,6 +1,16 @@
 package cn.edu.guet.weappdemo.bean;
 
 public class WeChatModel {
+    @Override
+    public String toString() {
+        return "WeChatModel{" +
+                "code='" + code + '\'' +
+                ", avatarUrl='" + avatarUrl + '\'' +
+                ", nickName='" + nickName + '\'' +
+                ", openid='" + openid + '\'' +
+                '}';
+    }
+
     private String code;
     private String avatarUrl;
     private String nickName;

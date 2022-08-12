@@ -2,27 +2,18 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="cn.edu.guet.weappdemo.mapper.UserMapper">
     <insert id="insertSelective" parameterType="cn.edu.guet.weappdemo.bean.WeChatModel">
-        insert into user
-        <if test="id != null">
-            id
-        </if>
-        <if test="avatarUrl != null">
-            avatarUrl
-        </if>
-        <if test="nickName != null">
-            nickName
-        </if>
-        <if test="openid != null">
-            openid
-        </if>
+        insert into user(openid, avatarUrl, nickName)
+        values (#{openid}, #{avatarUrl}, #{nickName})
     </insert>
 
     <select id="findUserByNameAndPassword" resultType="cn.edu.guet.weappdemo.bean.WeChatModel">
-        select * from user where id = #{openid}
-    </select>
-    <select id="findUserDetail" resultType="cn.edu.guet.weappdemo.bean.WeChatModel">
-        select id,openid,nickName,phone,gender,avatarUrl,province,country,city
+        select *
         from user
         where openid = #{openid}
+    </select>
+    <select id="getUserInfo" resultType="cn.edu.guet.weappdemo.bean.WeChatModel">
+        select *
+        from user
+        where openid = #{value}
     </select>
 </mapper>

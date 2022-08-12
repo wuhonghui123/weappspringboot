@@ -21,7 +21,7 @@ public class CommendController {
 
     @Autowired
     private CommendService commendService;
-    @GetMapping("/commend/list")//获取评论列表
+    @GetMapping("/commend/list")//获取菜品评论列表
     public HttpResult getCommend(){
         return HttpResult.ok(commendService.getCommend());
     }
