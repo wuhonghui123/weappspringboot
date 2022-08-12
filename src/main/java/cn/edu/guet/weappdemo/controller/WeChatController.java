@@ -21,9 +21,9 @@ import java.net.URLConnection;
 @Slf4j
 public class WeChatController {
 
-    String appid = "wx61883fc99e59741e";
+    String appid = "wx08c35624c8d66f8f";
 
-    String secret = "eb2d595b97779223c9dce58861a6638f";
+    String secret = "5af656eca6285b99581958e88e91a7a0";
 
     UserService userService;
 

@@ -37,7 +37,6 @@ public class CommendController {
     }
     @PostMapping("/commend/add")//添加评论
     public HttpResult addCommend(@RequestBody Commend commend){
-
         return HttpResult.ok(commendService.addCommend(commend));
     }
     @PostMapping("/commend/update")//更新评论
