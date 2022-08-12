@@ -16,6 +16,7 @@ public class CommendServicelmpl implements CommendService {
     private CommendMapper commendMapper;
     @Override
     public List<Commend> getCommend() {
+        System.out.println(commendMapper.getCommend());
         return commendMapper.getCommend();
     }
 

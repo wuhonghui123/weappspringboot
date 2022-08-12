@@ -15,8 +15,50 @@ public class Commend {
         this.food_name = food_name;
     }
 
+    public String getNickName() {
+        return nickName;
+    }
+
+    public void setNickName(String nickName) {
+        this.nickName = nickName;
+    }
+
+    public String getAvatarUrl() {
+        return avatarUrl;
+    }
+
+    public void setAvatarUrl(String avatarUrl) {
+        this.avatarUrl = avatarUrl;
+    }
+
+    @Override
+    public String toString() {
+        return "Commend{" +
+                "nickName='" + nickName + '\'' +
+                ", avatarUrl='" + avatarUrl + '\'' +
+                ", food_name='" + food_name + '\'' +
+                ", commend_id='" + commend_id + '\'' +
+                ", order_id='" + order_id + '\'' +
+                ", user_id='" + user_id + '\'' +
+                ", stars='" + stars + '\'' +
+                ", comments='" + comments + '\'' +
+                ", comments_time=" + comments_time +
+                ", storeReply='" + storeReply + '\'' +
+                ", storeReply_time=" + storeReply_time +
+                '}';
+    }
+
+    private String nickName;
+    private String avatarUrl;
     private String food_name;
     private String commend_id;
+    private String order_id;
+    private String user_id;
+    private String stars;
+    private String comments;//用户评论
+    private java.sql.Timestamp comments_time;
+    private String storeReply;//店家回复评论
+    private java.sql.Timestamp storeReply_time;
 
     public String getOrder_id() {
         return order_id;
@@ -26,13 +68,7 @@ public class Commend {
         this.order_id = order_id;
     }
 
-    private String order_id;
-    private String user_id;
-    private String stars;
-    private String comments;//用户评论
-    private java.sql.Timestamp comments_time;
-    private String storeReply;//店家回复评论
-    private java.sql.Timestamp storeReply_time;
+
 
     public String getCommend_id() {
         return commend_id;

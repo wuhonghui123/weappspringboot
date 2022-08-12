@@ -5,22 +5,22 @@
     <update id="updateCommend"></update>
     <delete id="deleteCommend"></delete>
     <select id="getCommend" resultType="cn.edu.guet.weappdemo.bean.Commend">
-        SELECT commend.*, order_food.food_name,user.avatarUrl,user.nickName
+        SELECT commend.*, order_food.food_name,`user`.avatarUrl,`user`.nickName
         FROM order_food,
              commend,
-             user
+             `user`
         WHERE commend.order_id = order_food.order_id
           AND commend.user_id = `user`.id
     </select>
     <select id="getOrderCommend" resultType="cn.edu.guet.weappdemo.bean.Commend">
-        SELECT commend.*,user.avatarUrl,user.nickName FROM commend,user
-        WHERE commend.user_id = user.id
+        SELECT commend.*,`user`.avatarUrl,`user`.nickName FROM commend,`user`
+        WHERE commend.user_id = `user`.id
     </select>
     <select id="getUserCommend" resultType="cn.edu.guet.weappdemo.bean.Commend">
         SELECT commend.*,`user`.avatarUrl,`user`.nickName
         FROM commend,
-             user
-        WHERE commend.user_id = user.id
-          AND user.openid = #{value}
+             `user`
+        WHERE commend.user_id = `user`.id
+          AND `user`.openid = #{value}
     </select>
 </mapper>
