@@ -34,6 +34,15 @@ public class Classification {
         this.class_name = class_name;
     }
 
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    private String title;
     private String class_name;
     private String icon;
 }
