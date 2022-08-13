@@ -5,6 +5,15 @@ package cn.edu.guet.weappdemo.bean;
  * @Date: 2022/07/24/23:30
  */
 public class OrderFood {
+    public String getFood_img() {
+        return food_img;
+    }
+
+    public void setFood_img(String food_img) {
+        this.food_img = food_img;
+    }
+
+    private String food_img;
     private String order_id;
     private String food_id;
     private String food_name;
