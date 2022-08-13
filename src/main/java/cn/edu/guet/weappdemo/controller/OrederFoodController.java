@@ -5,6 +5,7 @@ import cn.edu.guet.weappdemo.bean.ShoppingCart;
 import cn.edu.guet.weappdemo.http.HttpResult;
 import cn.edu.guet.weappdemo.service.OrderFoodService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -18,5 +19,9 @@ public class OrederFoodController {
         System.out.println(orderFood);
         int Result= orderFoodService.AddOrderFoodList(orderFood);
         return HttpResult.ok(Result);
+    }
+    @GetMapping("orderFood/getOrderFood")
+    public HttpResult getOrderFood(String order_id){
+        return HttpResult.ok(orderFoodService.getOrderFood(order_id));
     }
 }

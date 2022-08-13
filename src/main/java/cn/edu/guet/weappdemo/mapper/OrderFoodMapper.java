@@ -3,6 +3,7 @@ package cn.edu.guet.weappdemo.mapper;
 import cn.edu.guet.weappdemo.bean.OrderFood;
 import cn.edu.guet.weappdemo.bean.ShoppingCart;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -13,4 +14,5 @@ import java.util.List;
 @Mapper
 public interface OrderFoodMapper {
    int AddOrderFoodList(OrderFood orderFood);
+   List<OrderFood> getOrderFood(@Param("order_id") String order_id);
 }
