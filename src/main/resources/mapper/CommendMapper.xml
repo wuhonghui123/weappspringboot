@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="cn.edu.guet.weappdemo.mapper.CommendMapper">
-    <insert id="addCommend"></insert>
+    <insert id="addCommend" parameterType="cn.edu.guet.weappdemo.bean.Commend">
+        insert into commend(user_id, comments, stars, comments_time, order_id)
+        values (#{user_id}, #{comments}, #{stars}, now(), #{order_id})
+    </insert>
     <update id="updateCommend"></update>
     <delete id="deleteCommend"></delete>
     <select id="getCommend" resultType="cn.edu.guet.weappdemo.bean.Commend">
-        SELECT commend.*, order_food.food_name,`user`.avatarUrl,`user`.nickName
+        SELECT commend.*, order_food.food_name, `user`.avatarUrl, `user`.nickName
         FROM order_food,
              commend,
              `user`
@@ -13,11 +16,13 @@
           AND commend.user_id = `user`.id
     </select>
     <select id="getOrderCommend" resultType="cn.edu.guet.weappdemo.bean.Commend">
-        SELECT commend.*,`user`.avatarUrl,`user`.nickName FROM commend,`user`
+        SELECT commend.*, `user`.avatarUrl, `user`.nickName
+        FROM commend,
+             `user`
         WHERE commend.user_id = `user`.id
     </select>
     <select id="getUserCommend" resultType="cn.edu.guet.weappdemo.bean.Commend">
-        SELECT commend.*,`user`.avatarUrl,`user`.nickName
+        SELECT commend.*, `user`.avatarUrl, `user`.nickName
         FROM commend,
              `user`
         WHERE commend.user_id = `user`.id

@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="cn.edu.guet.weappdemo.mapper.OrderMapper">
     <insert id="addOrder">
-        insert into order_a values (#{id},'1', #{user_id},'1','1','1',now(),now(),'1','1','1','1',now(),'1','1','1','1')
+        insert into order_a values (#{id},#{order_type}, #{user_id},#{pay_type},'1','1',now(),now(),#{order_price},'1','1','1',now(),'1','1','1','1')
     </insert>
     <update id="updateOrder">
         update order_a set order_type=#{order_type} where id=#{order_id} and user_id=#{user_id}

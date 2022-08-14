@@ -15,6 +15,16 @@ public class WeChatModel {
     private String avatarUrl;
     private String nickName;
     private String openid;
+
+    public Double getMoney() {
+        return money;
+    }
+
+    public void setMoney(Double money) {
+        this.money = money;
+    }
+
+    private Double money;
     public String getCode() {
         return code;
     }

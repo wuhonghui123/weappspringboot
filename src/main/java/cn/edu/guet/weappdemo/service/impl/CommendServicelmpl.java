@@ -2,6 +2,7 @@ package cn.edu.guet.weappdemo.service.impl;
 
 import cn.edu.guet.weappdemo.bean.Commend;
 import cn.edu.guet.weappdemo.mapper.CommendMapper;
+import cn.edu.guet.weappdemo.mapper.OrderMapper;
 import cn.edu.guet.weappdemo.service.CommendService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -14,6 +15,8 @@ import java.util.List;
 public class CommendServicelmpl implements CommendService {
     @Autowired
     private CommendMapper commendMapper;
+    @Autowired
+    private OrderMapper orderMapper;
     @Override
     public List<Commend> getCommend() {
         System.out.println(commendMapper.getCommend());
@@ -32,9 +35,7 @@ public class CommendServicelmpl implements CommendService {
 
     @Override
     public int addCommend(Commend commend) {
-        Date date = new Date();//获取当前系统时间
-        Timestamp create_time = new Timestamp(date.getTime());
-        commend.setComments_time(create_time);
+        orderMapper.updateOrder(commend.getOrder_id(),commend.getUser_id(), "已完成");
         return commendMapper.addCommend(commend);
     }
 

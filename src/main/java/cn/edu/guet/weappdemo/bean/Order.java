@@ -12,6 +12,26 @@ import java.util.Map;
  */
 public class Order {
     private String id;
+
+    @Override
+    public String toString() {
+        return "Order{" +
+                "id='" + id + '\'' +
+                ", order_type='" + order_type + '\'' +
+                ", store_id='" + store_id + '\'' +
+                ", user_id='" + user_id + '\'' +
+                ", pay_type='" + pay_type + '\'' +
+                ", consume_type='" + consume_type + '\'' +
+                ", table='" + table + '\'' +
+                ", payment_status=" + payment_status +
+                ", create_time=" + create_time +
+                ", final_time=" + final_time +
+                ", order_price=" + order_price +
+                ", remark='" + remark + '\'' +
+                ", foodOrders=" + foodOrders +
+                '}';
+    }
+
     private String order_type;
     private String store_id;
     private String user_id;

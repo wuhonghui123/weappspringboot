@@ -5,6 +5,9 @@
         insert into user(openid, avatarUrl, nickName)
         values (#{openid}, #{avatarUrl}, #{nickName})
     </insert>
+    <update id="pay">
+        update user set money=money-#{price} where id = #{userid}
+    </update>
 
     <select id="findUserByNameAndPassword" resultType="cn.edu.guet.weappdemo.bean.WeChatModel">
         select *

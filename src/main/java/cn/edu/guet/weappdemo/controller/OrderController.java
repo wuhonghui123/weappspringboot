@@ -5,10 +5,9 @@ import cn.edu.guet.weappdemo.http.HttpResult;
 import cn.edu.guet.weappdemo.service.OrderService;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.UUID;
 
 /**
  * @Author: wuhonghui
@@ -37,8 +36,14 @@ public class OrderController {
     }
 
     @PostMapping("/order/addorder")//生成订单
-    public HttpResult addOrder(Order order){
-        return HttpResult.ok(orderService.addOrder(order));
+    public HttpResult addOrder(@RequestBody Order order){
+        System.out.println(order);
+        String orderid = String.valueOf((int)((Math.random()*9+1)*100000));
+        order.setId(orderid);
+        System.out.println(orderid);
+        int a = orderService.addOrder(order);
+        return HttpResult.ok(orderid
+        );
     }
     @GetMapping("/order/search")
     public HttpResult orderUserList(String order_id,String user_id){
