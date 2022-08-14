@@ -19,6 +19,15 @@ public class OrderFood {
     private String food_name;
     private int food_num;
     private double food_price;
+    private String food_img;
+
+    public String getFood_img() {
+        return food_img;
+    }
+
+    public void setFood_img(String food_img) {
+        this.food_img = food_img;
+    }
 
     public String getOrder_id() {
         return order_id;
@@ -59,6 +68,7 @@ public class OrderFood {
     public void setFood_price(double food_price) {
         this.food_price = food_price;
     }
+
 
 
 }
